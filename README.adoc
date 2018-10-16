@@ -1,0 +1,136 @@
+
+= Highlight Languages Test Suite
+Tristano Ajmone
+2018-10-16
+:lang: en
+// Rev Info
+:revremark: Highlight 3.47
+:revnumber!:
+// TOC Settings:
+:toc: left
+:toclevels: 5
+// Sections Numbering:
+:sectnums!:
+// Cross References:
+:xrefstyle: short
+:section-refsig: Sect.
+// Misc Settings:
+:experimental: true
+:icons: font
+:linkattrs: true
+:sectanchors: true
+
+// =====================================
+// Custom Attributes for Reference Links
+// =====================================
+:README_TESTCASES: pass:q[link:https://gitlab.com/saalen/highlight/blob/master/README_TESTCASES.adoc[`README_TESTCASES.adoc`^]]
+:LICENSE: pass:q[link:LICENSE[`LICENSE`^]]
+:MIT_license: pass:q[link:LICENSE[MIT license^]]
+// :xxx: pass:q[link:xxx[`xxx`^]]
+
+// *****************************************************************************
+// *                                                                           *
+// *                            Document Preamble                              *
+// *                                                                           *
+// *****************************************************************************
+
+
+A collection of syntax tests for Highlight's languages definitions.
+
+- https://gitlab.com/tajmone/highlight-test-suite
+
+
+== About This Project
+
+Highlight v3.45 introduced a new feature that allows to test if a source file is being syntax highlighted as expected.
+The goal of this project is create a collection of tests for all the languages supported by Highlight, in order to:
+
+1. Uncover and annotate edge cases that are not handled correctly by a landDef.
+2. Detected breaking changes while editing a landDef.
+3. Test a langDef against new features of the language when the latter is updated.
+
+== Project Structure
+
+Each language should be tested in a folder of its own, baring the same name as its langDef file.
+
+How tests should be conducted for any given language might depend on the nature of the language at hand, especially if the language supports nested languages.
+
+As a general rule, splitting tests into individual files should simplify tracking failures; so it's preferable to create many small individual test files targetting specific features of the language, and give each file a self-explanatory filename.
+
+Each language folder should contain a script that executes all the tests for that language, possibly as a Bash (`.sh`) script so that it might be usable on all platforms (Git for Windows ships with a Bash).
+
+A `README` file in the folder should provide some information on the language being tested, the tests being carried out, and annotate tests failures by providing meaningful notes and examples that might help improving the langDef to cover the language features which it failed.
+
+
+== Contributing
+
+
+LangDefs creators and/or maintainers are invited to add to this project the tests for their syntaxes.
+
+If you're aware of any problems with a language definition, feel free to add a test file to demonstrate how the language fails to highlight the syntax as expected, adding some notes on the test and the expected results.
+If that language is not present in the project, you can create a new folder for it, even if it's only to provide a single failing test example.
+
+Adding failure tests is an important remainder of the fixes that should be made to a langDef, so anyone is invited to submit tests that draw attention to uncovered edge cases, regardless of wether he/she is intending to fix the langDef or not.
+
+[IMPORTANT]
+================================================================================
+This project is MIT licensed.
+Any contents submitted to the project will implicitly fall under the same MIT license, unless otherwise specified.
+Don't submit any contents that are incompatible with the {MIT_license}.
+================================================================================
+
+
+== Highlight Syntax Tests
+
+Highlight will automatically carry out syntax tests when the input filename starts with `syntax_test_`.
+
+The test system is very simple to use as it exploits columns markers and state indicators in comment lines within the source file to indicate the expected highlight state for elements in the previous non-comment line of code:
+
+
+[source,C]
+--------------------------------------------------------------------------------
+#include "myheader"
+//< ppc  ^^^^^^^^^^ pps <1> <2>
+--------------------------------------------------------------------------------
+
+In the example above, the comment line carries out two tests on the previous line of code:
+
+<1> that `#include` is being highlighted as  _preprocessor_ (ppc), and
+<2> `"myheader"` as _preprocessor string_ (pps).
+
+The `^` indicators point at the tested string sections of the previous line, `<` points at the character directly above the comment delimiter's first character (`#` in the example above).
+
+Syntax testing is fully documented in the {README_TESTCASES} file that ships with Higlight.
+
+
+== License
+
+This project is released under {MIT_license}.
+
+--------------------------------------------------------------------------------
+MIT License
+
+Copyright (c) 2018 Tristano Ajmone <tajmone@gmail.com>
+https://gitlab.com/tajmone/highlight-test-suite
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+--------------------------------------------------------------------------------
+
+
+// EOF //
