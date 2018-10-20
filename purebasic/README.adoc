@@ -1,0 +1,91 @@
+= PureBasic Tests
+Tristano Ajmone
+2018-10-20: purebasic.lang v1.7.1 | PureBasic 5.62 | Highlight 3.47
+:version-label: v
+:lang: en
+:sectanchors:
+// TOC Settings:
+:toc: left
+:toclevels: 5
+// Sections Numbering:
+:sectnums!:
+:sectnumlevels: 2
+// Cross References:
+:xrefstyle: short
+:section-refsig: Sect.
+// Misc Settings:
+:experimental: true
+:icons: font
+:linkattrs: true
+// =============================================================================
+//                              Custom Attributes
+// =============================================================================
+:purebasic_lang: pass:q[link: https://gitlab.com/saalen/highlight/blob/master/langDefs/purebasic.lang [`langDefs/purebasic.lang`^]]
+
+// *****************************************************************************
+// *                                                                           *
+// *                            Document Preamble                              *
+// *                                                                           *
+// *****************************************************************************
+
+
+
+== Tests Contents
+
+To execute tests, launch `test.sh` in Bash.
+
+
+
+* `test.sh` -- executes all tests.
+* `errors.log` -- failed tests log file.
+
+
+
+== About PureBasic
+
+PureBasic is a commercial cross-platform language and IDE, available for Windows, Linux and macOS. It's a Basic procedural language, allowing inline Assembly and interfacing with external libraries (shared and static). Source files are compiled to binary executables or shared libraries, both 32 and 64 bit, on x86 architecture.
+
+* https://www.purebasic.com
+* https://en.wikipedia.org/wiki/PureBasic
+
+== About PureBasic LangDef
+
+* {purebasic_lang}
+
+PureBasic's Highlight definition was created by Tristano Ajmone in October 2016, and has undergone various updates during the course of time to keep up with new PureBasic versions.
+The language definition is actively maintened, and if it's not updated when a new PureBasic version is released it's because no new keywords were introduced in the language.
+
+Released into the public domain according to the Unlicense terms:
+
+* http://unlicense.org
+
+=== Case Sensitiveness
+
+Although PureBasic is not a case-sensitive language, the langDef was configured to be case-sensitive to allow differentation between PureBasic and ASM keywords which have the same spelling (e.g. `And` vs `AND`, `Not` vs `NOT`, `Or` vs `OR`, etc.).
+
+The rationale for this is that since PureBasic's native IDE offers code cleaning and reformatting functionality (which also fixes keywords casing according to the established convention), most PureBasic source code being highlighted is going to be well formatted anyhow.
+
+
+=== Syntax Elements
+
+PureBasic's langDef highlights the following elements:
+
+* Comments: Single line only; delmiter `;`.
+* Strings:
+** Literal: Delimiters `"`.
+** Escapable strings: Tilda prefix in opening delimter `~"`.
+* Escape: C-Like escape sequences, only inside strings.
+* Operators.
+* Digits:
+** Hexadecimal, Pascal style (`$FF`).
+** Binary (`%011010`).
+** Float.
+** Decimal.
+
+Keywords Groups:
+
+1. PureBasic keywords.
+2. Constants, Inline Assembly, ASM keywords.
+3. Procedures calls, Macros with parameters.
+
+// EOF //

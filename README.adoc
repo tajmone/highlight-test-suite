@@ -57,9 +57,31 @@ How tests should be conducted for any given language might depend on the nature 
 
 As a general rule, splitting tests into individual files should simplify tracking failures; so it's preferable to create many small individual test files targetting specific features of the language, and give each file a self-explanatory filename.
 
-Each language folder should contain a script that executes all the tests for that language, possibly as a Bash (`.sh`) script so that it might be usable on all platforms (Git for Windows ships with a Bash).
+Each language folder should contain a `test.sh` script that executes all the tests for that language and redirects failed tests errors (STDERR) to the `errors.log` file.
+Here is an example `test.sh` script from the `purebasic/` folder:
+
+[source,bash]
+---------------------------
+#!/bin/bash
+rm ./errors.log
+highlight\
+	--batch-recursive=*.pb\
+	--validate-input\
+	--replace-tabs=2\
+	--base16\
+	--style=material\
+	--font=consolas\
+	--font-size=14\
+	2>>errors.log
+---------------------------
+
+
+
+Using a standard convention in tests script will allow them to be used for automatic testing via Continuos Integration.
+Bash script will also be usable on all platforms (Git for Windows ships with a Bash).
 
 A `README` file in the folder should provide some information on the language being tested, the tests being carried out, and annotate tests failures by providing meaningful notes and examples that might help improving the langDef to cover the language features which it failed.
+The `README` file can be in any of the markup formats supported by GitLab's documents preview (AsciiDoc, Markdown, etc.).
 
 
 == Contributing

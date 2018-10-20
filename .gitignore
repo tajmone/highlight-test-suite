@@ -7,7 +7,10 @@
 #                                 PROJECT FILES
 # ==============================================================================
 
-README.html
+# Highlight generated html/css files_ 
+*.html
+highlight.css
+# NOTE: To test HTML syntax use *.htm extension instead!
 
 # TMP Work Files
 ___*.*
@@ -22,17 +25,17 @@ ___*.*
 
 ## PureBasic
 ############
-*.pb.cfg
-*.pbi.cfg
-*.pbp
-project.cfg
+purebasic/*.pb.cfg
+purebasic/*.pbi.cfg
+purebasic/*.pbp
+purebasic/project.cfg
 
 # ==============================================================================
 #                        GENERAL PURPOSE IGNORE PATTERNS
 # ==============================================================================
 
 # Log Files
-*.log
+# *.log
 # Links and URLs
 *.lnk
 *.url
