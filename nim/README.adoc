@@ -1,0 +1,88 @@
+= Nim Tests
+Tristano Ajmone
+2019-01-05: nim.lang | Nim 0.19.2 | Highlight 3.48
+:version-label: v
+:lang: en
+:sectanchors:
+// TOC Settings:
+:toc: left
+:toclevels: 5
+// Sections Numbering:
+:sectnums!:
+:sectnumlevels: 2
+// Cross References:
+:xrefstyle: short
+:section-refsig: Sect.
+// Misc Settings:
+:experimental:
+:icons: font
+:linkattrs:
+:reproducible:
+:sectanchors:
+// GitHub Settings for Admonitions Icons:
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :heavy_exclamation_mark:
+:note-caption: :information_source:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+// =====================================
+// Custom Attributes for Reference Links
+// =====================================
+:nim_lang: pass:q[link:https://gitlab.com/saalen/highlight/blob/master/langDefs/nim.lang[`langDefs/nim.lang`^]]
+:keywords_txt: pass:q[link:https://github.com/nim-lang/Nim/blob/v0.19.2/doc/keywords.txt[`keywords.txt`^,title="view source file on Nim GitHub repository"]]
+// Test Files:
+:test_keywords_deprecated: pass:q[link:./syntax_test_keywords_deprecated.nim[`syntax_test_keywords_deprecated.nim`]]
+:test_keywords: pass:q[link:./syntax_test_keywords.nim[`syntax_test_keywords.nim`]]
+:test_type-suffixes: pass:q[link:./syntax_test_type-suffixes.nim[`syntax_syntax_test_type-suffixes.nim`]]
+// *****************************************************************************
+// *                                                                           *
+// *                            Document Preamble                              *
+// *                                                                           *
+// *****************************************************************************
+
+
+
+== Tests Contents
+
+To execute tests, launch `test.sh` in Bash.
+
+* `test.sh` -- executes all tests.
+* `errors.log` -- failed tests log file.
+
+These are the test files:
+
+* {test_keywords} -- Tests against all keywords of current Nim version (as found in {keywords_txt}).
+* {test_keywords_deprecated} -- Tests that deprecated keywords are not highlighted as `kwa`.
+* {test_type-suffixes} -- Tests that literal numerical type suffixes are handled correctly.
+
+
+=== Failing Tests
+
+:3ccc9c467: https://github.com/nim-lang/Nim/commit/3ccc9c467d84dc8c3412acbea20fc10b5335eaa8[3ccc9c467^]
+
+* {test_keywords_deprecated} -- Some deprecated Nim keywords are still seen as `kwa`:
+** `atomic`, `generic`  (dropped in Nim v0.18.0)
+** `with`, `without`  (dropped in commit {3ccc9c467})
+* {test_type-suffixes} -- Although no error is reported, float suffixes are being treated as single-quote strings (integer suffixes are working correctly).
+
+
+== About Nim
+
+Nim is a compiled, garbage-collected systems programming language with a design that focuses on efficiency, expressiveness, and elegance (in that order of priority).
+Nim is cross-platform and open source, released under MIT License.
+
+* https://nim-lang.org[^,title="Visit Nim website"]
+* link:++https://en.wikipedia.org/wiki/Nim_(programming_language)++[^,title="Read the Nim entry on Wikipedia"]
+
+== About Nim LangDef
+
+* {nim_lang}
+
+The Nim language definition that ships with Highlight doesn't specify who its author was.
+In lack of a an explicit author and license specification, it's assumed to fall under the same license of the Highlight package (i.e. GNU GPL v3).
+
+
+// EOF //

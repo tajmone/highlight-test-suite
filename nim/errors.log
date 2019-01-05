@@ -1,0 +1,5 @@
+highlight: Could not validate files:
+.\syntax_test_keywords_deprecated.nim line 11, column 0: got kwa instead of std
+.\syntax_test_keywords_deprecated.nim line 13, column 0: got kwa instead of std
+.\syntax_test_keywords_deprecated.nim line 43, column 0: got kwa instead of std
+.\syntax_test_keywords_deprecated.nim line 45, column 0: got kwa instead of std
