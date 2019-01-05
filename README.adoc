@@ -1,24 +1,42 @@
 
 = Highlight Languages Test Suite
 Tristano Ajmone
-2018-10-16
+2019-01-05
 :lang: en
 // Rev Info
-:revremark: Highlight 3.47
+:revremark: Highlight 3.48
 :revnumber!:
 // TOC Settings:
-:toc: left
 :toclevels: 5
+// GitLab setting to show TOC after Preamble
+:toc: macro
+// TOC ... HTML Backend Hack to show TOC on the Left
+ifdef::backend-html5[]
+:toc: left
+endif::[]
+// TOC ... GitHub Hack to show TOC after Preamble (required)
+ifdef::env-github[]
+:toc: macro
+endif::[]
 // Sections Numbering:
 :sectnums!:
 // Cross References:
 :xrefstyle: short
 :section-refsig: Sect.
 // Misc Settings:
-:experimental: true
+:experimental:
 :icons: font
-:linkattrs: true
-:sectanchors: true
+:linkattrs:
+:reproducible:
+:sectanchors:
+// GitHub Settings for Admonitions Icons:
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :heavy_exclamation_mark:
+:note-caption: :information_source:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
 
 // =====================================
 // Custom Attributes for Reference Links
@@ -38,6 +56,20 @@ Tristano Ajmone
 A collection of syntax tests for Highlight's languages definitions.
 
 - https://gitlab.com/tajmone/highlight-test-suite
+
+// >>> GitLab/GitHub hacks to ensure TOC is shown after Preamble: >>>>>>>>>>>>>>
+ifndef::backend-html5[]
+'''
+toc::[]
+'''
+endif::[]
+ifdef::env-github[]
+'''
+toc::[]
+'''
+endif::[]
+// <<< GitHub/GitLab hacks <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 
 == About This Project

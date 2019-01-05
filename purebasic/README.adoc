@@ -1,6 +1,6 @@
 = PureBasic Tests
 Tristano Ajmone
-2018-10-20: purebasic.lang v1.7.1 | PureBasic 5.62 | Highlight 3.47
+2019-01-05: purebasic.lang v1.7.1 | PureBasic 5.62 | Highlight 3.48
 :version-label: v
 :lang: en
 :sectanchors:
@@ -14,13 +14,24 @@ Tristano Ajmone
 :xrefstyle: short
 :section-refsig: Sect.
 // Misc Settings:
-:experimental: true
+:experimental:
 :icons: font
-:linkattrs: true
-// =============================================================================
-//                              Custom Attributes
-// =============================================================================
-:purebasic_lang: pass:q[link: https://gitlab.com/saalen/highlight/blob/master/langDefs/purebasic.lang [`langDefs/purebasic.lang`^]]
+:linkattrs:
+:reproducible:
+:sectanchors:
+// GitHub Settings for Admonitions Icons:
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :heavy_exclamation_mark:
+:note-caption: :information_source:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+// =====================================
+// Custom Attributes for Reference Links
+// =====================================
+:purebasic_lang: pass:q[link: https://gitlab.com/saalen/highlight/blob/master/langDefs/purebasic.lang[`langDefs/purebasic.lang`^]]
 
 // *****************************************************************************
 // *                                                                           *
