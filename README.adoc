@@ -82,6 +82,9 @@ The goal of this project is create a collection of tests for all the languages s
 2. Detected breaking changes while editing a landDef.
 3. Test a langDef against new features of the language when the latter is updated.
 
+While the repository is conceived to test only against the syntax definitions that ship with the official Highlight package, developers can use this project to test syntax developement in local branches before submitting new/updated langDefs to Highlight repository.
+This offers a convenient work approach, especially for language definitions which fail some tests and need updating, where the developer can run the exisisting test files against his/her tweaked langDef (using the `--config-file=` option inside a customized test script).
+
 == Project Structure
 
 Each language should be tested in a folder of its own, baring the same name as its langDef file.
@@ -155,7 +158,7 @@ In the example above, the comment line carries out two tests on the previous lin
 
 The `^` indicators point at the tested string sections of the previous line, `<` points at the character directly above the comment delimiter's first character (`#` in the example above).
 
-Syntax testing is fully documented in the {README_TESTCASES} file that ships with Higlight.
+Syntax testing is fully documented in the {README_TESTCASES} file that ships with Highlight.
 
 
 == License
