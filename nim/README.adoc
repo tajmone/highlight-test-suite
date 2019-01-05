@@ -36,7 +36,8 @@ endif::[]
 // Test Files:
 :test_keywords_deprecated: pass:q[link:./syntax_test_keywords_deprecated.nim[`syntax_test_keywords_deprecated.nim`]]
 :test_keywords: pass:q[link:./syntax_test_keywords.nim[`syntax_test_keywords.nim`]]
-:test_type-suffixes: pass:q[link:./syntax_test_type-suffixes.nim[`syntax_syntax_test_type-suffixes.nim`]]
+:test_type-suffixes: pass:q[link:./syntax_test_type-suffixes.nim[`syntax_test_type-suffixes.nim`]]
+:test_numerals: pass:q[link:./syntax_test_numerals.nim[`syntax_test_numerals.nim`]]
 // *****************************************************************************
 // *                                                                           *
 // *                            Document Preamble                              *
@@ -54,8 +55,9 @@ To execute tests, launch `test.sh` in Bash.
 
 These are the test files:
 
-* {test_keywords} -- Tests against all keywords of current Nim version (as found in {keywords_txt}).
 * {test_keywords_deprecated} -- Tests that deprecated keywords are not highlighted as `kwa`.
+* {test_keywords} -- Tests against all keywords of current Nim version (as found in {keywords_txt}).
+* {test_numerals} -- Tests that numeral are handled correctly.
 * {test_type-suffixes} -- Tests that literal numerical type suffixes are handled correctly.
 
 
@@ -67,7 +69,9 @@ These are the test files:
 ** `atomic`, `generic`  (dropped in Nim v0.18.0)
 ** `with`, `without`  (dropped in commit {3ccc9c467})
 * {test_type-suffixes} -- Although no error is reported, float suffixes are being treated as single-quote strings (integer suffixes are working correctly).
-
+* {test_type-suffixes} -- Numerals are not handled correctly:
+** Floats exponents break numbers.
+** Underscore separators are not supported in Hex and floats.
 
 == About Nim
 
