@@ -55,7 +55,8 @@ endif::[]
 
 A collection of syntax tests for Highlight's languages definitions.
 
-- https://gitlab.com/tajmone/highlight-test-suite
+* https://gitlab.com/tajmone/highlight-test-suite[gitlab.com/tajmone/highlight-test-suite,title="Visit main project repository on GitLab"] (main repo)
+* https://github.com/tajmone/highlight-test-suite[github.com/tajmone/highlight-test-suite,title="Visit cloned project repository on GitHub"] (clone)
 
 // >>> GitLab/GitHub hacks to ensure TOC is shown after Preamble: >>>>>>>>>>>>>>
 ifndef::backend-html5[]
