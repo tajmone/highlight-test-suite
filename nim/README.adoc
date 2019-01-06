@@ -89,4 +89,10 @@ The Nim language definition that ships with Highlight doesn't specify who its au
 In lack of a an explicit author and license specification, it's assumed to fall under the same license of the Highlight package (i.e. GNU GPL v3).
 
 
+== Nim Lang References
+
+
+* https://nim-lang.org/docs/manual.html#lexical-analysis-numerical-constants[Nim Manual: Numerical constants^]
+* https://nim-lang.org/docs/tut1.html#basic-types-integers[Nim Tutorial (Part I): Basic types, Integers^]
+
 // EOF //

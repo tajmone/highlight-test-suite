@@ -18,3 +18,5 @@ highlight: Could not validate files:
 .\syntax_test_numerals.nim line 34, column 15: got std instead of num
 .\syntax_test_numerals.nim line 34, column 16: got std instead of num
 .\syntax_test_numerals.nim line 34, column 17: got std instead of num
+.\syntax_test_type-suffixes.nim line 37, column 15: got num instead of str
+.\syntax_test_type-suffixes.nim line 37, column 16: got num instead of str
