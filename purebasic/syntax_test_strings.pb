@@ -7,7 +7,7 @@
 ; ------------------------------------------------------------------------------
 
 ; ==============================================================================
-;                                Literal Strings                                
+;-                               Literal Strings                                
 ; ==============================================================================
 ; The only literal string delimiter is the double quotes character.
 
@@ -15,7 +15,7 @@ string_plain.s = "I'm a plain string."
 ;                ^^^^^^^^^^^^^^^^^^^^^ str
 
 ; ==============================================================================
-;                                Escaped Strings                                
+;-                               Escaped Strings                                
 ; ==============================================================================
 ; By prefixing a tilda to a literal string the following escape sequences are
 ; supported:

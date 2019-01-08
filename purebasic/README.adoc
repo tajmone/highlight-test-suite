@@ -1,6 +1,6 @@
 = PureBasic Tests
 Tristano Ajmone
-2019-01-05: purebasic.lang v1.7.1 | PureBasic 5.62 | Highlight 3.48
+2019-01-08: purebasic.lang v1.7.1 | PureBasic 5.62 | Highlight 3.48
 :version-label: v
 :lang: en
 :sectanchors:
@@ -50,6 +50,19 @@ To execute tests, launch `test.sh` in Bash.
 * `test.sh` -- executes all tests.
 * `errors.log` -- failed tests log file.
 
+
+== Source Files Validation
+
+To validate the examples files source code via PureBasic compiler `/CHECK` option:
+
+* `validate_win.bat` (MS Windows)
+
+The script will autodetect the OS bitness and check for the available PureBasic compilers and their version number.
+It will try to use both x86 and x86_64 compilers (if available), but only compilers matching the specific PureBasic version used in the tests will be usable.
+
+[NOTE]
+The script is only able to detect PureBasic compilers that were installed in the default setup directories (i.e. `%ProgramFiles%` and `%ProgramFiles(x86)%`).
+The assumption is that most users will be installing the lastest version of PureBasic in the default setup folders (detecting compilers installed in custom paths would be too complicated).
 
 
 == About PureBasic
