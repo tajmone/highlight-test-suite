@@ -1,0 +1,35 @@
+-- "vanilla.theme" v1.0.0 | 2019/01/10 | Highlight v3.48 | by Tristano Ajmone
+--------------------------------------------------------------------------------
+Description = "Plain Vanilla Theme (White on Black)"
+--[[----------------------------------------------------------------------------
+
+Highlight enforces using a theme, even when including a custom CSS file via the
+"--style-infile" option, which appends the custom CSS to that generated from the
+theme.
+
+This "vanilla theme" is just a workaround when using custom CSS to handle all of
+Highlight theme styles, and it's not possible to use the "--fragment" option. 
+
+Since a theme can't be empty (for Highlight will raise an error if some elements
+styles are not defined), this theme sets the canvas to black and all elements to
+white, with no italics and bolds. This ensures that it won't interfere with any
+custom CSS.
+
+------------------------------------------------------------------------------]]
+Canvas         = { Colour = "#000000" }
+Default        = { Colour = "#FFFFFF" }
+
+Number        = Default
+Escape        = Default
+String        = Default
+BlockComment  = Default
+StringPreProc = Default
+LineComment   = Default
+Operator      = Default
+LineNum       = Default
+PreProcessor  = Default
+Interpolation = Default
+
+Keywords = {
+  Default,
+}

@@ -1,0 +1,79 @@
+/*!
+     Highlight Test Theme (public domain)
+     By Tristano Ajmone, 2017.
+*/
+html {
+  margin: 0 auto;
+  width: 900px;
+  max-width: 900px !important; }
+
+body.hl {
+  background-color: #333333;
+  color: #D0D0D0;
+  font-size: 16px;
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  letter-spacing: 1px;
+  text-align: justify; }
+
+h1 {
+  color: #EEE; }
+
+pre.hl {
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #555555;
+  padding: 1em;
+  overflow: auto;
+  letter-spacing: 0; }
+
+.hl.num {
+  color: #FFFF00; }
+.hl.esc {
+  color: #FFB011; }
+.hl.ipl {
+  color: #EC00F9; }
+.hl.str {
+  color: #72CC23; }
+.hl.ppc {
+  color: #954FFF; }
+.hl.pps {
+  color: #598BFF; }
+.hl.com {
+  color: #999999;
+  font-style: normal; }
+.hl.slc {
+  color: #999999;
+  font-style: italic; }
+.hl.lin {
+  color: #555555; }
+.hl.opt {
+  color: #FF0000; }
+.hl.kwa, .hl.kwb, .hl.kwc, .hl.kwd, .hl.kwe, .hl.kwf, .hl.kwg, .hl.kwh, .hl.kwi, .hl.kwj {
+  font-weight: bold; }
+.hl.kwa, .hl.kwb, .hl.kwc, .hl.kwd, .hl.kwe {
+  color: #000000; }
+.hl.kwf, .hl.kwg, .hl.kwh, .hl.kwi, .hl.kwj {
+  background-color: #333333; }
+.hl.kwa {
+  background-color: #00F1F9; }
+.hl.kwb {
+  background-color: #598BFF; }
+.hl.kwc {
+  background-color: #954FFF; }
+.hl.kwd {
+  background-color: #FF0000; }
+.hl.kwe {
+  background-color: #FFB011; }
+.hl.kwf {
+  color: #00F1F9; }
+.hl.kwg {
+  color: #598BFF; }
+.hl.kwh {
+  color: #954FFF; }
+.hl.kwi {
+  color: #FF0000; }
+.hl.kwj {
+  color: #FFB011; }
+
+/*# sourceMappingURL=test-theme.css.map */

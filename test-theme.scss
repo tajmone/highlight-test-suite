@@ -1,0 +1,200 @@
+// "test-theme.scss" v1.0 | 2019/01/10 | Highlight v3.48
+// *****************************************************************************
+// *                                                                           *
+// *                       Highlight Testing CSS Theme                         *
+// *                                                                           *
+// *****************************************************************************
+// Sass SCSS source to build a CSS theme ("test-theme.css") that can be used
+// with the automated tests of this project. The theme is designed to provide
+// strong contrasting colors and styling that help visually spotting how the
+// syntax elements are being highlighted.
+//
+// Every available syntax element is uniquely styled, and Keywords groups up to
+// Id 10 are covered to ensure that no elements are left out in the preview.
+// -----------------------------------------------------------------------------
+// Based on "Highlight Theme Boilerplate" by Tristano Ajmone (public domain):
+//
+//      /highlight/extras/themes-resources/css-themes/hl-theme-boilerplate.scss
+//
+// =============================================================================
+//                                Color Palette
+// =============================================================================
+$BLACK:         #000000;
+$BLACK_SHADE:   #333333;
+$BLUE:          #598BFF;
+$CYAN:          #00F1F9;
+$GREEN:         #72CC23;
+$GREY:          #999999;
+$DARKGREY:      #555555;
+$MAGENTA:       #EC00F9;
+$ORANGE:        #FFB011;
+$PURPLE:        #954FFF;
+$RED:           #FF0000;
+$WHITE:         #FFFFFF;
+$YELLOW:        #FFFF00;
+// =============================================================================
+//                           Colors Scheme Defintion
+// =============================================================================
+$HL-CanvasBG:       $BLACK;
+$HL-Default:        $WHITE;
+
+$HL-Border:         $DARKGREY;
+$HL-LineNum:        $DARKGREY;
+
+$HL-Number:         $YELLOW;
+$HL-Escape:         $ORANGE;
+$HL-Interpolation:  $MAGENTA;
+$HL-String:         $GREEN;
+$HL-PreProcessor:   $PURPLE;
+$HL-StringPreProc:  $BLUE;
+$HL-BlockComment:   $GREY;
+$HL-LineComment:    $GREY;
+$HL-Operator:       $RED;
+
+$HL-Keywords1:      $CYAN;
+$HL-Keywords2:      $BLUE;
+$HL-Keywords3:      $PURPLE;
+$HL-Keywords4:      $RED;
+$HL-Keywords5:      $ORANGE;
+/*!
+     Highlight Test Theme (public domain)
+     By Tristano Ajmone, 2017.
+*/
+// ==============================================================================
+//                                  Page Layout                                  
+// ==============================================================================
+html {
+    margin:    0 auto;
+    width: 900px;
+    max-width: 900px !important;
+}
+body.hl {
+    background-color: $BLACK_SHADE;
+    color: #D0D0D0;
+    font-size: 16px;
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+h1 { color: #EEE; }
+// =============================================================================
+//                               Theme Definition
+// =============================================================================
+pre.hl {
+    background-color: $HL-CanvasBG;
+    color: $HL-Default;
+
+    // Border and padding
+    border-radius: 4px;
+    border: 1px solid $HL-Border;
+    padding: 1em;
+
+    // Some basic styling, just in case you need it...
+    overflow: auto;
+    letter-spacing: 0;
+}
+.hl {
+    &.num {
+        // Numbers
+        color: $HL-Number;
+    }
+    &.esc {
+        // Escape sequences
+        color: $HL-Escape;
+    }
+    &.ipl {
+        // Interpolation sequences
+        color: $HL-Interpolation;
+    }
+    &.str {
+        // Strings
+        color: $HL-String;
+    }
+    &.ppc {
+        // Preprocessor directives
+        color: $HL-PreProcessor;
+    }
+    &.pps {
+        // Strings within preprocessor directives
+        color: $HL-StringPreProc;
+    }
+    &.com {
+        // Block comments
+        color: $HL-BlockComment;
+        font-style: normal;
+    }
+    &.slc {
+        // Single-line comments
+        color: $HL-LineComment;
+        font-style: italic;
+    }
+    &.lin {
+        // Line numbers
+        color: $HL-LineNum;
+    }
+    &.opt {
+        // Operators
+        color: $HL-Operator;
+    }
+    // -------------------------------------------------------------------------
+    //                             KEYWORDS GROUPS
+    // -------------------------------------------------------------------------
+    &.kwa, &.kwb, &.kwc, &.kwd, &.kwe, &.kwf, &.kwg, &.kwh, &.kwi, &.kwj  {
+        // All Keywords Groups
+        font-weight: bold;
+    }
+    &.kwa, &.kwb, &.kwc, &.kwd, &.kwe  {
+       // Keywords Groups 1-5
+       color: $BLACK;
+    }
+    &.kwf, &.kwg, &.kwh, &.kwi, &.kwj  {
+        // Keywords Groups 6-10
+        background-color: $BLACK_SHADE;
+    }
+    // ============
+    // Keywords 1-5
+    // ============
+    &.kwa {
+        // Keywords Group 1
+        background-color: $HL-Keywords1;
+    }
+    &.kwb  {
+        // Keywords Group 2
+        background-color: $HL-Keywords2;
+    }
+    &.kwc  {
+        // Keywords Group 3
+        background-color: $HL-Keywords3;
+    }
+    &.kwd  {
+        // Keywords Group 4
+        background-color: $HL-Keywords4;
+    }
+    &.kwe  {
+        // Keywords Group 5
+        background-color: $HL-Keywords5;
+    }
+    // =============
+    // Keywords 6-10
+    // =============
+    &.kwf {
+        // Keywords Group 6
+        color: $HL-Keywords1;
+    }
+    &.kwg  {
+        // Keywords Group 7
+        color: $HL-Keywords2;
+    }
+    &.kwh  {
+        // Keywords Group 8
+        color: $HL-Keywords3;
+    }
+    &.kwi  {
+        // Keywords Group 9
+        color: $HL-Keywords4;
+    }
+    &.kwj  {
+        // Keywords Group 10
+        color: $HL-Keywords5;
+    }
+}

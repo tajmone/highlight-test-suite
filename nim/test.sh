@@ -1,11 +1,11 @@
 #!/bin/bash
-rm ./errors.log
+rm ./errors.log >/dev/null 2>&1
 highlight\
-	--batch-recursive=*.nim\
-	--validate-input\
-	--replace-tabs=2\
-	--base16\
-	--style=material\
-	--font=consolas\
-	--font-size=14\
-	2>>errors.log
+    --batch-recursive=*.nim\
+    --validate-input\
+    --replace-tabs=2\
+    --config-file=../vanilla.theme\
+    --style-infile=../test-theme.css\
+    --font=consolas\
+    --font-size=12\
+    2>>errors.log
