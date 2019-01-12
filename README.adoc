@@ -1,7 +1,7 @@
 
 = Highlight Languages Test Suite
 Tristano Ajmone
-2019-01-10
+2019-01-12
 :lang: en
 // Rev Info
 :revremark: Highlight 3.48
@@ -81,14 +81,14 @@ endif::[]
 == About This Project
 
 Highlight v3.45 introduced a new feature that allows to test if a source file is being syntax highlighted as expected.
-The goal of this project is create a collection of tests for all the languages supported by Highlight, in order to:
+The goal of this project is to create a collection of tests for all the languages supported by Highlight, in order to:
 
 1. Uncover and annotate edge cases that are not handled correctly by a landDef.
 2. Detected breaking changes while editing a landDef.
-3. Test a langDef against new features of the language when the latter is updated.
+3. Test a langDef against new features of a language when the latter is updated.
 
-While the repository is conceived to test only against the syntax definitions that ship with the official Highlight package, developers can use this project to test syntax developement in local branches before submitting new/updated langDefs to Highlight repository.
-This offers a convenient work approach, especially for language definitions which fail some tests and need updating, where the developer can run the exisisting test files against his/her tweaked langDef (using the `--config-file=` option inside a customized test script).
+While the repository is conceived to test only against the syntax definitions that ship with the official Highlight package, developers can also use this project to test syntax developement in local branches before submitting new/updated langDefs to Highlight repository.
+This offers a convenient work approach, especially for language definitions which fail some tests and need updating, where the developer can run the existing test files against his/her tweaked langDef (using the `--config-file=` option inside a customized test script).
 Check the project branches to see some examples of how the repository is being used to update existing langDefs and work on upcoming new syntaxes.
 
 == Project Structure
