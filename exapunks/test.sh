@@ -1,6 +1,7 @@
 #!/bin/bash
 rm ./errors.log >/dev/null 2>&1
 highlight\
+    --isolate\
     --config-file=exapunks.lang\
     --batch-recursive=*.exa\
     --validate-input\

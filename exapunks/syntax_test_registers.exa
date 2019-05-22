@@ -9,11 +9,12 @@
 COPY X T
 ;    ^ kwb
 ;      ^ kwb
-
+;   ^ ^ ws
 ADDI M F X
 ;    ^ kwb
 ;      ^ kwb
 ;        ^ kwb
+;   ^ ^ ^ ws
 
 ; --------------------------
 ; Hardware Registers (#NAME)
@@ -22,3 +23,4 @@ ADDI M F X
 COPY X #NERV
 ;      ^^^^^ kwc
 ;    ^ kwb
+;   ^ ^ ws
