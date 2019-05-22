@@ -54,7 +54,7 @@ non_escaped_str$ = "..\a...\b...\f...\n...\r...\t...\v...\\..."
 ;
 ; Presence of invalid escapes prevents compilation of a source file!
 
-CompilerIf #False ; <- Required to make this file compile/run
+CompilerIf #False ; -> Required to make this file compile/run
   
   ; ------------------------------------------------------------------------------
   ;- Uppercased

@@ -1,6 +1,7 @@
 #!/bin/bash
 rm ./errors.log >/dev/null 2>&1
 highlight\
+    --isolate\
     --batch-recursive=*.pb\
     --validate-input\
     --replace-tabs=2\
