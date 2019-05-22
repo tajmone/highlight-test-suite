@@ -1,0 +1,13 @@
+; ==============================================================================
+;                                exapunks macros                                
+; ==============================================================================
+; Macros are Keyword Group 5 (HTML: kwe).
+
+@REP 3
+;<^^ kwe
+SWIZ T @{3,-1} #PASS ; note how the numbers in the macro are parsed as num!
+;      ^^ ^  ^ kwe
+;        ^ ^^ num
+;              ^^^^^ kwc
+@END
+;<^^ kwe

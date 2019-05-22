@@ -1,0 +1,10 @@
+; ==============================================================================
+;                                EXAPUNKS LABELS                                
+; ==============================================================================
+; Label are defined by the MARK instruction.
+; Any non-register after a JUMP, TJMP or FJMP instruction is a label.
+
+MARK MYLABEL
+;    ^^^^^^^ kwd
+TJMP MYLABEL
+;    ^^^^^^^ kwd

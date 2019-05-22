@@ -1,0 +1,6 @@
+NOTE I'm a comment
+;<^^^^^^^^^^^^^^^^ slc
+
+COPY T X ; TMP STORE T
+;        ^^^^^^^^^^^^^ slc
+

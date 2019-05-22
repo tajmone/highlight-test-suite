@@ -1,0 +1,14 @@
+; ==============================================================================
+;                               EXAPUNKS NUMBERS                               
+; ==============================================================================
+; Valid numbers are in the range -9999 to 9999.
+; The syntax considers the "-" symbol as part of the number.
+
+COPY -666 T
+;    ^^^^ num
+
+COPY 0 X
+;    ^ num
+
+LINK 800
+;    ^^^ num
