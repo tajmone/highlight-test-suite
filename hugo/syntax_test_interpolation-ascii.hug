@@ -1,0 +1,18 @@
+!\==============================================================================
+                         ASCII TESTS FOR INTERPOLATION
+================================================================================
+This document is saved in ISO-8859-1 encoding.
+
+Hugo files will usually be in ASCII/ISO-8859-1, but source files/snippets might
+also be in UTF-8 format in documentation projects; so we must ensure that some
+tricky characters are caught in both encodings -- e.g. the acute accent Â´.
+------------------------------------------------------------------------------\!
+
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+! NOTE: The escaped accents below will show up broken in the HTML doc due to the
+!       test script being set to use UTF-8 encoding. But we only aim at the
+!       test results here, which are working fine.
+!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+"..\´a..\´u..\´e..\´E.."     ! acute accents
+!  ^^^  ^^^  ^^^  ^^^ ipl

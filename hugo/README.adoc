@@ -1,0 +1,102 @@
+= Hugo Tests
+Tristano Ajmone
+2019-05-24: hugo.lang v1.0.0 | Hugo v3.1.03 | Highlight 3.51
+:version-label: v
+:lang: en
+:sectanchors:
+// TOC Settings:
+:toc: left
+:toclevels: 5
+// Sections Numbering:
+:sectnums!:
+:sectnumlevels: 2
+// Cross References:
+:xrefstyle: short
+:section-refsig: Sect.
+// Misc Settings:
+:experimental:
+:icons: font
+:linkattrs:
+:reproducible:
+:sectanchors:
+// GitHub Settings for Admonitions Icons:
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :heavy_exclamation_mark:
+:note-caption: :information_source:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+// =====================================
+// Custom Attributes for Reference Links
+// =====================================
+:purebasic_lang: pass:q[link: https://gitlab.com/saalen/highlight/blob/master/langDefs/purebasic.lang[`langDefs/purebasic.lang`^]]
+
+// *****************************************************************************
+// *                                                                           *
+// *                            Document Preamble                              *
+// *                                                                           *
+// *****************************************************************************
+
+
+
+== Tests Contents
+
+To execute tests, launch `test.sh` in Bash.
+
+* `test.sh` -- executes all tests.
+* `errors.log` -- failed tests log file.
+
+
+== Source Files Encoding
+
+The test files are in UTF-8 encoding, with the exception of files ending in `-ascii.hug`, which are in ISO-8859-1.
+
+Hugo source files are likely to be in ISO-8859-1 or ASCII encoding, but in documentation projects chances are they'll come as snippets inside UTF-8 documents, or converted to UTF-8 due to toolchain requirements (e.g. Asciidoctor requires included files to be in UTF-8).
+
+Some escape sequences characters (defined as `Interpolation`) might differ depending on the encoding of the Hugo source -- e.g. to cover the acute accent in the `\´` escape, the Hugo syntax tries to match it both in ASCII (`´`) and UTF-8 (`\xC2\xB4`).
+
+This is an example of how old languages from the pre-Unicode era might need extra care when they might be highlighted in context demanding UTF-8 conversion of the original source, for some edge-cases might be encountered for those characters from the (so called) "`extended ASCII`" charset (in this case, ISO-8859-1) which end up being econded with two bytes in UTF-8.
+
+
+
+== About Hugo
+
+
+The Hugo Interactive Fiction Development System (1995-2006) is bot a language and a set of cross-platform tools for creating text-adventures with sound and graphics, developed by Kent Tessman for The General Coffee Company Film Productions, released under BSD-2-Clause License.
+
+* http://www.generalcoffee.com/hugo/gethugo.html
+* http://ifwiki.org/index.php/Hugo
+
+== About Hugo LangDef
+
+Syntax definition for Hugo language v3.1.03 (2006).
+
+Hugo's Highlight definition was created by Tristano Ajmone in May 2019.
+
+Released into the public domain according to the Unlicense terms:
+
+* http://unlicense.org
+
+=== Syntax Elements
+
+Hugo's langDef highlights the following elements:
+
+* Comments: Single line and block.
+* Strings:
+** Literal: Delimiters `"`.
+* Escape/Interpolation: Hugo has many escape sequences (only inside strings), including some to control text style and others to produce special characters (accented letters, etc.).
+So I've placed the latter under the `Interpolation` element, to provide visual separation between the two groups.
+This is because prose strings are likely to contain many adjacent escapes of both types.
+* Operators.
+* Digits: integers only.
+* Preprocessor: compiler directives.
+
+Keywords Groups:
+
+1. Hugo keywords.
+2. ASCII chars constants.
+3. Limit Settings.
+
+// EOF //

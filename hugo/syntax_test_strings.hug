@@ -1,0 +1,175 @@
+! ==============================================================================
+!                                    STRINGS
+! ==============================================================================
+
+print ""
+!     ^^ str
+
+print "some string"
+!     ^^^^^^^^^^^^^ str
+!    ^ ws
+
+print "This is a ";
+print "single line."
+!     ^^^^^^^^^^^^ str
+!    ^ ws
+
+! ------------------------------------------------------------------------------
+!                               MULTILINE STRINGS
+! ------------------------------------------------------------------------------
+
+print "This is a
+single line."
+!<^^^^^^^^^^^ str
+
+print "This is a \
+single line."
+!<^^^^^^^^^^^ str
+
+
+!\==============================================================================
+                           ESCAPE SEQUENCES IN STRINGS
+================================================================================
+Escape sequences are allowed only inside strings.
+
+Hugo has a considerable number of escape sequences, most of which are to control
+text styles and allow special characters. For improved code readability, special
+character sequences have been defined as Interpolation elements so they can be
+colored differently from the other escape sequences. This is because strings of
+prose text can contain many such sequences, and having at least two colors to
+differentiate between control characters and formatting styles, on the one hand,
+and special characters, on the other, improves readability.
+
+--------------------------------------------------------------------------------
+                                 ESCAPE SEQUENCES
+--------------------------------------------------------------------------------
+\"   inserts quotation marks
+\\   insert a literal backslash character
+\_   insert a forced space, overriding left-justification in string remainder
+\n   insert a forced newline
+------------------------------------------------------------------------------\!
+
+print "\"Hello!\""              !  \"   quotation marks
+!      ^^      ^^  esc
+!     ^  ^^^^^^  ^ str
+!                               ^^^^^^^^^^^^^^^^^^^^^^^ slc
+
+print "One\\two\\three"         !  \\   literal backslash
+!         ^^   ^^ esc
+!     ^^^^  ^^^  ^^^^^ str
+!                               ^^^^^^^^^^^^^^^^^^^^^^^^^ slc
+
+print "      Left-justified"    !  \_  forced space
+print "\_    Not left-justified"
+!      ^^   esc
+!     ^  ^^^^^^^^^^^^^^^^^^^^^^^ str
+
+print "Print a\nnewline"        !  \n   forced newline
+!             ^^ esc
+!     ^^^^^^^^  ^^^^^^^^ str
+
+!\------------------------------------------------------------------------------
+                                  ASCII ESCAPES
+--------------------------------------------------------------------------------
+  \#xxx   any ASCII or Latin-1 character where xxx represents the three-digit
+          ASCII number (or Latin-1 code).
+------------------------------------------------------------------------------\!
+
+"\#065"
+!^^^^^  esc
+!<    ^ str
+
+!\------------------------------------------------------------------------------
+                                FORMATTING ESCAPES
+--------------------------------------------------------------------------------
+formatting sequences for styles:
+  \B  boldface on
+  \b  boldface off
+  \I  italics on
+  \i  italics off
+  \P  proportional printing on
+  \p  proportional printing off
+  \U  underlining on
+  \u  underlining off
+------------------------------------------------------------------------------\!
+
+print "A \Bbold string with some \Iitalics\i and \Uunderline\b thrown in.\u"
+!        ^^                      ^^       ^^     ^^         ^^            ^^
+
+print "\B\b\I\i\U\u\P\p"
+!     ^                ^ str
+!      ^^^^^^^^^^^^^^^^  esc
+
+!\==============================================================================
+                                 INTERPOLATION
+================================================================================
+Escape sequences for special characters are captured as interpolation elements,
+so they can be visually distinguished from other escapes.
+
+--------------------------------------------------------------------------------
+                              SPECIAL CHARS ESCAPES
+--------------------------------------------------------------------------------
+Special characters formatting sequences (ISO-8859-1):
+
+  \`  accent grave followed by a letter (e.g. "\`a" -> "à")
+  \’  accent acute followed by a letter (e.g. "\’E" -> "É")
+  \~  tilde followed by a letter        (e.g. "\~n" -> "ñ")
+   \^  circumflex followed by a letter  (e.g. "\^i" -> "î")
+  \:  umlaut followed by a letter       (e.g. "\:u" -> "ü")
+  \,  cedilla followed by c or C        (e.g. "\,c" -> "ç")
+  \< or \> Spanish quotation marks (« »)
+  \!  upside-down exclamation point (¡)
+  \?  upside-down question mark (¿)
+  \ae ae ligature (æ)
+  \AE AE ligature (Æ)
+  \c  cents symbol (¢)
+  \L  British pound (£)
+  \Y  Japanese Yen (¥)
+
+------------------------------------------------------------------------------\!
+
+"..\`a..\`u..\`e..\`E.."     ! grave accents -> à ù è È
+!  ^^^  ^^^  ^^^  ^^^   ipl
+
+"..\´a..\´u..\´e..\´E.."     ! acute accents -> á ú é É
+!   ^^    ^^   ^        ipl
+! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+! NOTE: It's difficult to test the above due to ´ being represented as $c2 $b4
+!       in UTf-8, and breaking up the actual columns count.
+! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+"El Ni\~no"                  ! tilde -> "El Niño"
+!     ^^ ipl
+
+"..\^a..\^A..\^u..\^i.."     ! circumflex -> â Â û î
+!  ^^^  ^^^  ^^^  ^^^   ipl
+
+"..\:a..\:u..\:U.."          ! umlat -> ä ü Ü
+!  ^^^  ^^^  ^^^  ipl
+
+"..\,c..\,C.."               ! cedilla -> ç Ç
+!  ^^^  ^^^  ipl
+
+"..\<..\>.."                 ! angle brackets -> « »
+!  ^^  ^^  ipl
+
+"..\!..\?.."                 ! upside-down marks -> ¡ ¿
+!  ^^  ^^  ipl
+
+"..\ae..\AE.."               ! ligatures -> æ Æ
+!  ^^^  ^^^  ipl
+
+"..\c..\L..\Y.."             ! currency -> ¢ £ ¥
+!  ^^  ^^  ^^  ipl
+
+! ==============================================================================
+!                                  MIXED TESTS                                  
+! ==============================================================================
+
+
+"\B\L \"pound\"\L\b..\"\Icitt\`a\i\""
+!  ^^          ^^            ^^^      ipl
+!^^   ^^     ^^      ^^^^       ^^^^  esc
+!<   ^  ^^^^^      ^^    ^^^^       ^ str
+
+

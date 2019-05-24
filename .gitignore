@@ -33,6 +33,12 @@ purebasic/*.pbi.cfg
 purebasic/*.pbp
 purebasic/project.cfg
 
+
+## Hugo Interactive Fiction
+###########################
+hugo/*.lst
+hugo/*.hex
+
 # ==============================================================================
 #                        GENERAL PURPOSE IGNORE PATTERNS
 # ==============================================================================

@@ -1,0 +1,62 @@
+! ==============================================================================
+!                                 Limit Settings                                
+! ==============================================================================
+
+$MAXDICTEXTEND = 512
+!<^^^^^^^^^^^^ kwc
+!             ^ ^ ws
+
+$MAXALIASES = 0
+!<^^^^^^^^^ kwc
+
+$MAXARRAYS = 0
+!<^^^^^^^^ kwc
+
+$MAXCONSTANTS = 0
+!<^^^^^^^^^^^ kwc
+
+$MAXDICT = 0
+!<^^^^^^ kwc
+
+$MAXDICTEXTEND = 0
+!<^^^^^^^^^^^^ kwc
+
+$MAXDIRECTORIES = 0
+!<^^^^^^^^^^^^^ kwc
+
+$MAXEVENTS = 0
+!<^^^^^^^^ kwc
+
+$MAXFLAGS = 0
+!<^^^^^^^ kwc
+
+$MAXLABELS = 0
+!<^^^^^^^^ kwc
+
+$MAXOBJECTS = 0
+!<^^^^^^^^^ kwc
+
+$MAXPROPERTIES = 0
+!<^^^^^^^^^^^^ kwc
+
+$MAXROUTINES = 0
+!<^^^^^^^^^^ kwc
+
+$MAXSPECIALWORDS = 0
+!<^^^^^^^^^^^^^^ kwc
+
+! ==========================================
+! Lowercase limit settings should NOT match:
+! ==========================================
+
+$maxobjects = 0
+!<^^^^^^^^^ std
+
+$maxproperties = 0
+!<^^^^^^^^^^^^ std
+
+$maxroutines = 0
+!<^^^^^^^^^^ std
+
+$maxspecialwords = 0
+!<^^^^^^^^^^^^^^ std

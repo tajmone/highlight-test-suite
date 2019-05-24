@@ -52,6 +52,12 @@ LICENSE      text
 ######
 *.nim      text
 
+## Hugo Interactive Fiction
+###########################
+*.hug      text
+hugo/*.lst text
+hugo/*.hex binary
+
 # ==============================================================================
 #                                GitHub Linguist
 # ==============================================================================
@@ -67,5 +73,9 @@ LICENSE      text
 *.pbf    linguist-language=PureBasic
 *.pbp    linguist-generated=true
 *.pbp    linguist-language=XML
+
+## Hugo Interactive Fiction
+## ---------------------------
+*.hug    linguist-language=Hugo
 
 # EOF #
