@@ -1,6 +1,7 @@
 ################################################################################
-# Highlight Languages Test Suite                                               #
-# https://gitlab.com/tajmone/highlight-test-suite                              #
+# Highlight Languages Test Suite:                                              #
+#   https://gitlab.com/tajmone/highlight-test-suite                            #
+#   https://github.com/tajmone/highlight-test-suite                            #
 ################################################################################
 
 root = true

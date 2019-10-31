@@ -1,0 +1,28 @@
+################################################################################
+# Highlight Languages Test Suite:                                              #
+#   https://gitlab.com/tajmone/highlight-test-suite                            #
+#   https://github.com/tajmone/highlight-test-suite                            #
+################################################################################
+
+# Travis CI build tests for the GitHub repository.
+
+dist: trusty
+
+git:
+  depth: false
+
+install:
+  - npm install -g eclint
+
+script:
+  # =======================
+  # EditorConfig Validation
+  # =======================
+  # Validate code styles of committed changes
+  # against EditorConfig settings via EClint:
+  #
+  #   https://www.npmjs.com/package/eclint
+  #
+  - eclint check
+
+# EOF #
