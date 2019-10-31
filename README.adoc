@@ -62,7 +62,7 @@ endif::[]
 //                              repository Badges
 // =============================================================================
 // Badge: MIT License
-link:#license[image:https://img.shields.io/badge/license-MIT-green[MIT License]]
+link:#license[image:https://img.shields.io/badge/license-MIT-00b5da[MIT License]]
 // Badge: Travis CI (GitHub clone only)
 ifdef::env-github[]
 {nbsp}
