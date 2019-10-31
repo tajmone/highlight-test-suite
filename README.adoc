@@ -1,10 +1,10 @@
 
 = Highlight Languages Test Suite
 Tristano Ajmone
-2019-05-23
+2019-10-31
 :lang: en
 // Rev Info
-:revremark: Highlight 3.48
+:revremark: Highlight 3.53
 :revnumber!:
 // TOC Settings:
 :toclevels: 5
@@ -21,6 +21,7 @@ endif::[]
 // Sections Numbering:
 :sectnums!:
 // Cross References:
+:idprefix:
 :xrefstyle: short
 :section-refsig: Sect.
 // Misc Settings:
@@ -57,6 +58,16 @@ endif::[]
 // *                                                                           *
 // *****************************************************************************
 
+// =============================================================================
+//                              repository Badges
+// =============================================================================
+// Badge: MIT License
+link:#license[image:https://img.shields.io/badge/license-MIT-green[MIT License]]
+// Badge: Travis CI (GitHub clone only)
+ifdef::env-github[]
+{nbsp}
+image:https://travis-ci.org/tajmone/highlight-test-suite.svg?branch=master[Travis CI^,title="Travis CI build status"]
+endif::[]
 
 A collection of syntax tests for Highlight's languages definitions.
 
@@ -107,15 +118,15 @@ Here is an example `test.sh` script from the `purebasic/` folder:
 #!/bin/bash
 rm ./errors.log >/dev/null 2>&1
 highlight\
-    --isolate\ <1>
-    --batch-recursive=*.pb\ <2>
-    --validate-input\
-    --replace-tabs=2\ <3>
-    --config-file=../vanilla.theme\   <4>
-    --style-infile=../test-theme.css\ <5>
-    --font=consolas\ <6>
-    --font-size=12\  <7>
-    2>>errors.log
+  --isolate\ <1>
+  --batch-recursive=*.pb\ <2>
+  --validate-input\
+  --replace-tabs=2\ <3>
+  --config-file=../vanilla.theme\   <4>
+  --style-infile=../test-theme.css\ <5>
+  --font=consolas\ <6>
+  --font-size=12\  <7>
+  2>>errors.log
 ---------------------------
 
 <1> Use `--isolate` (optional) to be able to test whitespace between contiguos tokens of same type. Introduced in Highlight v3.51.
