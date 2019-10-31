@@ -18,13 +18,17 @@
 COPYING      text
 LICENSE      text
 
-## ================
-## GIT CONFIG FILES
-## ================
-.gitattributes text
-.gitconfig     text
-.gitignore     text
-.gitmodules    text
+## ===================
+## REPO CONFIGURATIONS
+## ===================
+.editorconfig  text eol=lf
+.gitlab-ci.yml text eol=lf
+.travis.yml    text eol=lf
+
+.gitattributes text eol=lf
+.gitconfig     text eol=lf
+.gitignore     text eol=lf
+.gitmodules    text eol=lf
 
 ## =============
 ## SHELL SCRIPTS

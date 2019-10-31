@@ -7,7 +7,7 @@
 #                                 PROJECT FILES
 # ==============================================================================
 
-# Highlight generated html/css files_ 
+# Highlight generated html/css files_
 *.html
 highlight.css
 # NOTE: To test HTML syntax use *.htm extension instead!

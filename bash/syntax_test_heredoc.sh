@@ -2,9 +2,9 @@
 
 if true ; then
 #  ^^^^ std ^ kwa
-    cat <<- EOF >> /tmp/outfile
-    File contents
-    EOF
+	cat <<- EOF >> /tmp/outfile
+	File contents
+	EOF
 #   ^^^ str
 fi
 #< kwa

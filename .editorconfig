@@ -1,0 +1,40 @@
+################################################################################
+# Highlight Languages Test Suite                                               #
+# https://gitlab.com/tajmone/highlight-test-suite                              #
+################################################################################
+
+root = true
+
+
+## Configurations
+#################
+[.{git*,editorconfig,*.yml}]
+end_of_line = lf
+indent_style = space
+indent_size = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Lua Scripts
+##############
+[*.{lua,lang,theme}]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Shell Scripts
+################
+[*.sh]
+end_of_line = lf
+indent_style = tab
+indent_size = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# EOF #

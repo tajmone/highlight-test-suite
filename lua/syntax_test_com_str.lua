@@ -11,8 +11,8 @@ dofile "test.lua"
 --                 ^ opt
 --                  ^^ num
 
-   var=111111111111111111111
---     ^^^^^^^^^^^^^^^^^^^^^ num
+  var=111111111111111111111
+--    ^^^^^^^^^^^^^^^^^^^^^ num
 
 Strings={
   Delimiter=[["|']],
@@ -21,7 +21,7 @@ Strings={
   DelimiterPairs= {
     { Open=[[ \[=*\[ ]], Close=[[ \]=*\] ]], Raw=true }
     --     ^          ^ str                ^ opt
-                   --  ^ opt   ^          ^ str  ^ kwa 
+                  --   ^ opt   ^          ^ str  ^ kwa
   },
   AssertEqualLength=true
 }

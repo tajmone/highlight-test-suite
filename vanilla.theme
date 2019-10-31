@@ -8,7 +8,7 @@ Highlight enforces using a theme, even when including a custom CSS file via the
 theme.
 
 This "vanilla theme" is just a workaround when using custom CSS to handle all of
-Highlight theme styles, and it's not possible to use the "--fragment" option. 
+Highlight theme styles, and it's not possible to use the "--fragment" option.
 
 Since a theme can't be empty (for Highlight will raise an error if some elements
 styles are not defined), this theme sets the canvas to black and all elements to
