@@ -109,61 +109,61 @@ so they can be visually distinguished from other escapes.
 --------------------------------------------------------------------------------
                               SPECIAL CHARS ESCAPES
 --------------------------------------------------------------------------------
-Special characters formatting sequences (ISO-8859-1):
+Special characters formatting sequences (ISO-8859-1):                         \!
 
-  \`  accent grave followed by a letter (e.g. "\`a" -> "à")
-  \’  accent acute followed by a letter (e.g. "\’E" -> "É")
-  \~  tilde followed by a letter        (e.g. "\~n" -> "ñ")
-   \^  circumflex followed by a letter  (e.g. "\^i" -> "î")
-  \:  umlaut followed by a letter       (e.g. "\:u" -> "ü")
-  \,  cedilla followed by c or C        (e.g. "\,c" -> "ç")
-  \< or \> Spanish quotation marks (« »)
-  \!  upside-down exclamation point (¡)
-  \?  upside-down question mark (¿)
-  \ae ae ligature (æ)
-  \AE AE ligature (Æ)
-  \c  cents symbol (¢)
-  \L  British pound (£)
-  \Y  Japanese Yen (¥)
+  "\`"       ! accent grave followed by a letter   -- e.g. \`a
+  "\´"       ! accent acute followed by a letter   -- e.g. \´e
+  "\~"       ! tilde followed by a letter          -- e.g. \~n
+  "\^"       ! circumflex followed by a letter     -- e.g. \^i
+  "\:"       ! umlaut followed by a letter         -- e.g. \:u
+  "\,"       ! cedilla followed by c or C          -- e.g. \,c
+  "\< or \>" ! Spanish quotation marks
+  "\!"       ! upside-down exclamation point
+  "\?"       ! upside-down question mark
+  "\ae"      ! ae ligature
+  "\AE"      ! AE ligature
+  "\c"       ! cents symbol
+  "\L"       ! British pound
+  "\Y"       ! Japanese Yen
 
-------------------------------------------------------------------------------\!
+!-------------------------------------------------------------------------------
 
-"..\`a..\`u..\`e..\`E.."     ! grave accents -> à ù è È
+"..\`a..\`u..\`e..\`E.."     ! grave accents
 !  ^^^  ^^^  ^^^  ^^^   ipl
 
-"..\´a..\´u..\´e..\´E.."     ! acute accents -> á ú é É
-!   ^^    ^^   ^        ipl
+"..\´a..\´u..\´e..\´E.."     ! acute accents
+!  ^^^  ^^^  ^^^  ^^^   ipl
 ! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ! NOTE: It's difficult to test the above due to ´ being represented as $c2 $b4
 !       in UTf-8, and breaking up the actual columns count.
 ! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-"El Ni\~no"                  ! tilde -> "El Niño"
+"El Ni\~no"                  ! tilde
 !     ^^ ipl
 
-"..\^a..\^A..\^u..\^i.."     ! circumflex -> â Â û î
+"..\^a..\^A..\^u..\^i.."     ! circumflex
 !  ^^^  ^^^  ^^^  ^^^   ipl
 
-"..\:a..\:u..\:U.."          ! umlat -> ä ü Ü
+"..\:a..\:u..\:U.."          ! umlat
 !  ^^^  ^^^  ^^^  ipl
 
-"..\,c..\,C.."               ! cedilla -> ç Ç
+"..\,c..\,C.."               ! cedilla
 !  ^^^  ^^^  ipl
 
-"..\<..\>.."                 ! angle brackets -> « »
+"..\<..\>.."                 ! angle brackets
 !  ^^  ^^  ipl
 
-"..\!..\?.."                 ! upside-down marks -> ¡ ¿
+"..\!..\?.."                 ! upside-down marks
 !  ^^  ^^  ipl
 
-"..\ae..\AE.."               ! ligatures -> æ Æ
+"..\ae..\AE.."               ! ligatures
 !  ^^^  ^^^  ipl
 
-"..\c..\L..\Y.."             ! currency -> ¢ £ ¥
+"..\c..\L..\Y.."             ! currency
 !  ^^  ^^  ^^  ipl
 
 ! ==============================================================================
-!                                  MIXED TESTS                                  
+!                                  MIXED TESTS
 ! ==============================================================================
 
 

@@ -1,15 +1,16 @@
 = Hugo Tests
 Tristano Ajmone
-2019-05-24: hugo.lang v1.0.0 | Hugo v3.1.03 | Highlight 3.51
+:HL_VER: 3.54
+:HugoLang_VER: 1.1.0
+2019-11-14: hugo.lang v{HugoLang_VER} | Hugo v3.1.03 | Highlight {HL_VER}
 :version-label: v
 :lang: en
-:sectanchors:
 // TOC Settings:
 :toc: left
 :toclevels: 5
-// Sections Numbering:
+// Sections Options:
 :sectnums!:
-:sectnumlevels: 2
+:sectanchors:
 // Cross References:
 :xrefstyle: short
 :section-refsig: Sect.
@@ -18,7 +19,6 @@ Tristano Ajmone
 :icons: font
 :linkattrs:
 :reproducible:
-:sectanchors:
 // GitHub Settings for Admonitions Icons:
 ifdef::env-github[]
 :caution-caption: :fire:
@@ -31,7 +31,8 @@ endif::[]
 // =====================================
 // Custom Attributes for Reference Links
 // =====================================
-:purebasic_lang: pass:q[link: https://gitlab.com/saalen/highlight/blob/master/langDefs/purebasic.lang[`langDefs/purebasic.lang`^]]
+:hugo-book: http://htmlpreview.github.io/?https://github.com/tajmone/hugo-book/blob/draft/docs_src/hugo-book.html
+:hugo-src: https://github.com/tajmone/hugo/blob/master/source/
 
 // *****************************************************************************
 // *                                                                           *
@@ -51,14 +52,14 @@ To execute tests, launch `test.sh` in Bash.
 
 == Source Files Encoding
 
-The test files are in UTF-8 encoding, with the exception of files ending in `-ascii.hug`, which are in ISO-8859-1.
+The test files are all in ISO-8859-1, since Hugo doesn't support Unicode and the most common encoding for text adventures is Latin1 (although other single-byte encodings are allowed).
+Technically speaking, Hugo sources should be strictly in Ascii, using escape sequences to handle special characters not present in the Ascii character set; but use of Latin1 strings is permissible (without guarantees that they will display properly on all supported OSs and terminal interpreters),
 
-Hugo source files are likely to be in ISO-8859-1 or ASCII encoding, but in documentation projects chances are they'll come as snippets inside UTF-8 documents, or converted to UTF-8 due to toolchain requirements (e.g. Asciidoctor requires included files to be in UTF-8).
+Although Hugo source files are likely to be in ISO-8859-1 or ASCII encoding, in documentation projects chances are they'll come as snippets inside UTF-8 documents, or converted to UTF-8 due to toolchain requirements (e.g. Asciidoctor requires included files to be in UTF-8).
 
 Some escape sequences characters (defined as `Interpolation`) might differ depending on the encoding of the Hugo source -- e.g. to cover the acute accent in the `\´` escape, the Hugo syntax tries to match it both in ASCII (`´`) and UTF-8 (`\xC2\xB4`).
 
 This is an example of how old languages from the pre-Unicode era might need extra care when they might be highlighted in context demanding UTF-8 conversion of the original source, for some edge-cases might be encountered for those characters from the (so called) "`extended ASCII`" charset (in this case, ISO-8859-1) which end up being econded with two bytes in UTF-8.
-
 
 
 == About Hugo
@@ -95,8 +96,62 @@ This is because prose strings are likely to contain many adjacent escapes of bot
 
 Keywords Groups:
 
-1. Hugo keywords.
-2. ASCII chars constants.
-3. Limit Settings.
+. Hugo keywords.
+. Built-in global variables, properties and engine variables.
+. ASCII chars constants, system words, properties qualifiers, boolean constants (`true`/`false`).
+. Limit settings.
+
+
+== Hugo References
+
+Some useful links to link:{hugo-book}[_The Hugo Book_^,title="Read 'The Hugo Book' online version"] and link:{hugo-src}[Hugo source files^] for understanding the Hugo syntax.
+
+* link:{hugo-book}[_The Hugo Book_^,title="Read 'The Hugo Book' online version"] -- online HTML version.
+* link:https://github.com/tajmone/hugo[Hugo sources^] -- on GitHub.
+
+
+=== Hugo Tokens
+
+
+* link:{hugo-src}htokens.h#L78[Hugo sources: `htokens.h`^] -- array with all Hugo tokens.
+* link:{hugo-book}#tokens[_The Hugo Book_: 15.1. Tokens^] -- lists all all Hugo tokens.
+
+
+=== Built-in Engine Globals
+
+* link:{hugo-book}#before_we_get_to_the_routines[_The Hugo Book_: §8.1^] -- lists the twelve global variables pre-defined by the engine.
+* link:{hugo-book}#globals[_The Hugo Book_: Appendix B.2^] -- lists the twelve globals pre-defined by the engine.
+* link:{hugo-src}he.c#L18[Hugo sources: `he.c`^] -- predefined engine globals.
+
+
+=== Built-in Engine Properties
+
+* link:{hugo-book}#before_we_get_to_the_routines[_The Hugo Book_: §8.1^] -- lists the six properties pre-defined by the engine.
+* link:{hugo-book}#properties_2[_The Hugo Book_: Appendix B.5^] -- lists the six properties pre-defined by the engine.
+* link:{hugo-src}hcmisc.c#L1651[Hugo sources: `hcmisc.c`^] -- predefined engine properties.
+* link:{hugo-src}he.c#L32[Hugo sources: `he.c`^] -- predefined engine properties.
+* link:{hugo-src}he.c#L39[Hugo sources: `he.c`^] -- predefined "`display`" object properties properties.
+
+
+=== Built-in Engine Functions
+
+:fn6: pass:a,m,q[link:{hugo-book}++#_footnotedef_6++[The Hugo Book: footnote 6.^]]
+
+[quote, {fn6}]
+____
+Built-in functions are just like other Hugo functions except that they're never defined anywhere in source code or any library file: the compiler and engine always know about them.
+To distinguish them, they're generally printed in lowercase, whereas program-defined routines (including library routines) are almost always capitalized.
+____
+
+
+=== Limit Settings
+
+* link:{hugo-book}#limit_settings_2[_The Hugo Book_: Appendix C: Limit Settings^].
+
+
+=== Compiler Directives
+
+* link:{hugo-book}#compiler_directives[_The Hugo Book_: §2.7. Compiler Directives^].
+* link:{hugo-src}hccomp.c#L22[Hugo sources: `hccomp.c`^] -- contains all compiler directives.
 
 // EOF //

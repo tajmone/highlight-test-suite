@@ -2,7 +2,7 @@
 rm ./errors.log >/dev/null 2>&1
 highlight\
 	--isolate\
-	--encoding=UTF-8\
+	--encoding=ISO-8859-1\
 	--config-file=hugo.lang\
 	--batch-recursive=*.hug\
 	--validate-input\

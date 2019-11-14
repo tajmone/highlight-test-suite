@@ -1,0 +1,25 @@
+! ******************************************************************************
+! *                                                                            *
+! *                       Path Stings in Hugo Resources                        *
+! *                                                                            *
+! ******************************************************************************
+! Test file path strings in Hugo resources.
+!
+! File path strings shouldn't be treated like ordinary text strings, which can
+! contain escape sequences and special characters. This potentially affects
+! Windows paths, because of the backslash directory separator matching the
+! escapes and interpolation delimiter.
+
+picture "c:\IF\pics\car.jpg" !  \I  &  \p  &  \c
+
+resource "GAMEPICS"
+{
+    ".\imgs\aeronaut.jpg"  !  \ae -> ligature
+    ".\imgs\Baptiste.jpg"  !  \b  -> boldface on
+    ".\imgs\bicycles.jpg"  !  \b  -> boldface off
+    ".\imgs\isotopes.jpg"  !  \i  -> italics off
+    ".\imgs\nunchaku.jpg"  !  \n  -> newline
+    ".\imgs\protocol.jpg"  !  \p  -> proportional printing off
+    ".\imgs\unicorns.jpg"  !  \u  -> underlining off
+    ".\imgs\Yoghourt.jpg"  !  \Y  -> Japanese Yen
+}

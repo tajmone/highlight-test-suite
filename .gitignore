@@ -1,27 +1,32 @@
-################################################################################
-# Highlight Languages Test Suite:                                              #
-#   https://gitlab.com/tajmone/highlight-test-suite                            #
-#   https://github.com/tajmone/highlight-test-suite                            #
-################################################################################
+#####################################################
+#  Highlight Languages Test Suite                   #
+#  https://gitlab.com/tajmone/highlight-test-suite  #
+#####################################################
 
-# ==============================================================================
-#                                 PROJECT FILES
-# ==============================================================================
+# ===================
+# REPOSITORY SETTINGS
+# ===================
+# These settings apply to the whole project.
 
-# Highlight generated html/css files_
+## Highlight
+############
+# Highlight generated html/css files:
 *.html
 highlight.css
 # NOTE: To test HTML syntax use *.htm extension instead!
 
-# TMP Work Files
-___*.*
-
-# Sass
+## Sass/SCSS
+############
 *.css.map
 
-# ==============================================================================
-#                              TEST-LANGUAGES FILES
-# ==============================================================================
+## TMP Work Files
+#################
+___
+___*.*
+
+# ====================
+# TEST-LANGUAGES FILES
+# ====================
 # When a new language is added to the tests, all its associated temporary files'
 # patterns (created by an editor/IDE or compiler) should be added to this section
 # to exclude them from the project.
@@ -40,9 +45,9 @@ purebasic/project.cfg
 hugo/*.lst
 hugo/*.hex
 
-# ==============================================================================
-#                        GENERAL PURPOSE IGNORE PATTERNS
-# ==============================================================================
+# ===============================
+# GENERAL PURPOSE IGNORE PATTERNS
+# ===============================
 
 # Log Files
 # *.log

@@ -1,16 +1,22 @@
-################################################################################
-# Highlight Languages Test Suite:                                              #
-#   https://gitlab.com/tajmone/highlight-test-suite                            #
-#   https://github.com/tajmone/highlight-test-suite                            #
-################################################################################
-* text=auto
-# ==============================================================================
-#                                 PROJECT FILES
-# ==============================================================================
+#####################################################
+#  Highlight Languages Test Suite                   #
+#  https://gitlab.com/tajmone/highlight-test-suite  #
+#####################################################
 
-## =============
-## DOCUMENTATION
-## =============
+# ===================
+# REPOSITORY SETTINGS
+# ===================
+# These settings apply to the whole project.
+
+* text=auto
+
+## Highlight
+############
+*.lang    text
+*.theme   text
+
+## Documentation
+################
 *.adoc       text
 *.asciidoc   text
 *.markdown   text
@@ -19,9 +25,8 @@
 COPYING      text
 LICENSE      text
 
-## ===================
-## REPO CONFIGURATIONS
-## ===================
+## Repository configurations
+############################
 .editorconfig  text eol=lf
 .gitlab-ci.yml text eol=lf
 .travis.yml    text eol=lf
@@ -31,56 +36,37 @@ LICENSE      text
 .gitignore     text eol=lf
 .gitmodules    text eol=lf
 
-## =============
-## SHELL SCRIPTS
-## =============
-*.bat      text eol=crlf
-*.com      text eol=crlf
-*.sh       text eol=lf
-*.ps1      text eol=crlf
+## Shell scripts
+################
+*.bat    text eol=crlf
+*.com    text eol=crlf
+*.sh     text eol=lf
+*.ps1    text eol=crlf
 
-# ==============================================================================
-#                              TEST-LANGUAGES FILES
-# ==============================================================================
+# ====================
+# TEST-LANGUAGES FILES
+# ====================
 # When a new language is added to the tests, all its associated files extensions
 # should be added to this section to ensure correct EOL normalization.
 
 ## PureBasic
-############
-*.pb       text
-*.pbi      text
-*.pbp      text
-*.pbf      text
-*.cfg      text
+###############
+purebasic/*.pb     text
+purebasic/*.pbf    text
+purebasic/*.pbf    gitlab-language=PureBasic
+purebasic/*.pbf    linguist-language=PureBasic
+purebasic/*.pbi    text
 
 ## Nim
-######
-*.nim      text
+#########
+nim/*.nim    text
 
 ## Hugo Interactive Fiction
 ###########################
-*.hug      text
-hugo/*.lst text
-hugo/*.hex binary
-
-# ==============================================================================
-#                                GitHub Linguist
-# ==============================================================================
-#  -- https://github.com/github/linguist
-#
-# Manually define/override some extension so that GitHub's Linguist library can
-# 1) Correctly gather statistics on source files, and
-# 2) Use proper syntax highlighting on GitHub's WebUI.
-
-## PureBASIC project files
-## ---------------------------
-*.cfg    linguist-generated=true
-*.pbf    linguist-language=PureBasic
-*.pbp    linguist-generated=true
-*.pbp    linguist-language=XML
-
-## Hugo Interactive Fiction
-## ---------------------------
-*.hug    linguist-language=Hugo
+hugo/*.hug    text
+hugo/*.hug    gitlab-language=Hugo
+hugo/*.hug    linguist-language=Hugo
+hugo/*.lst    text
+hugo/*.hex    binary
 
 # EOF #

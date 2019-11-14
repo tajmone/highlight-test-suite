@@ -1,0 +1,23 @@
+! ******************************************************************************
+! *                                                                            *
+! *                     Path Stings in Include Directives                      *
+! *                                                                            *
+! ******************************************************************************
+! Test file path strings in #include and #link directives.
+!
+! Preprocessor strings shouldn't be treated like ordinary text strings, which
+! can contain escape sequences and special characters. This potentially affects
+! Windows paths, due to the backslash directory separator matching the escapes
+! and interpolation delimiter.
+
+#include "D:\IF\Lib\cars.h"  ! \I  &  \L  &  \c
+!           ^^ ^^  ^^ pps
+#include ".\inc\new\Yoda.h"  ! \i  &  \n  &  \Y
+!          ^^  ^^  ^^ pps
+
+! The same applies to the #link directive to include precompiled headers:
+
+#link "D:\IF\Lib\cars.hlb"  ! \I  &  \L  &  \c
+!        ^^ ^^  ^^ pps
+#link ".\inc\new\Yoda.hlb"  ! \i  &  \n  &  \Y
+!       ^^  ^^  ^^ pps

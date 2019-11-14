@@ -1,49 +1,49 @@
 ! ==============================================================================
-!                                 Limit Settings                                
+!                                 Limit Settings
 ! ==============================================================================
 
 $MAXDICTEXTEND = 512
-!<^^^^^^^^^^^^ kwc
+!<^^^^^^^^^^^^ kwd
 !             ^ ^ ws
 
 $MAXALIASES = 0
-!<^^^^^^^^^ kwc
+!<^^^^^^^^^ kwd
 
 $MAXARRAYS = 0
-!<^^^^^^^^ kwc
+!<^^^^^^^^ kwd
 
 $MAXCONSTANTS = 0
-!<^^^^^^^^^^^ kwc
+!<^^^^^^^^^^^ kwd
 
 $MAXDICT = 0
-!<^^^^^^ kwc
+!<^^^^^^ kwd
 
 $MAXDICTEXTEND = 0
-!<^^^^^^^^^^^^ kwc
+!<^^^^^^^^^^^^ kwd
 
 $MAXDIRECTORIES = 0
-!<^^^^^^^^^^^^^ kwc
+!<^^^^^^^^^^^^^ kwd
 
 $MAXEVENTS = 0
-!<^^^^^^^^ kwc
+!<^^^^^^^^ kwd
 
 $MAXFLAGS = 0
-!<^^^^^^^ kwc
+!<^^^^^^^ kwd
 
 $MAXLABELS = 0
-!<^^^^^^^^ kwc
+!<^^^^^^^^ kwd
 
 $MAXOBJECTS = 0
-!<^^^^^^^^^ kwc
+!<^^^^^^^^^ kwd
 
 $MAXPROPERTIES = 0
-!<^^^^^^^^^^^^ kwc
+!<^^^^^^^^^^^^ kwd
 
 $MAXROUTINES = 0
-!<^^^^^^^^^^ kwc
+!<^^^^^^^^^^ kwd
 
 $MAXSPECIALWORDS = 0
-!<^^^^^^^^^^^^^^ kwc
+!<^^^^^^^^^^^^^^ kwd
 
 ! ==========================================
 ! Lowercase limit settings should NOT match:
